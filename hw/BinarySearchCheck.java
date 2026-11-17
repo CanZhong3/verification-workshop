@@ -22,7 +22,6 @@ public class BinarySearchCheck {
         }
     }
 
-    // TODO (7): the contract of midpoint, as a harness
     //   ./bmc BinarySearchCheck.midpoint --unwind 1
     public static void midpoint(int lo, int hi) {
         CProver.assume(0 <= lo && lo <= hi);
