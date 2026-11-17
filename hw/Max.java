@@ -7,8 +7,12 @@ public class Max {
     //@ ensures (\exists int j; 0 <= j && j < a.length; \result == a[j]);
     public static int max(int[] a) {
         int m = a[0];
-        // TODO (3): loop invariants (and a decreases clause)
-        for (int i = 1; i < a.length - 1; i++) {
+        //@ loop_invariant 0 < i && i <= a.length;
+        //@ loop_invariant i <= a.length || a.length == 1;
+        //@ loop_invariant (\exists int j; 0 <= j && j < i; m == a[j]);
+        //@ loop_invariant (\forall int j; 0 <= j && j < i; m >= a[j]);
+        //@ decreases a.length - 1 - i;
+        for (int i = 1; i < a.length; i++) {
             if (a[i] > m) {
                 m = a[i];
             }

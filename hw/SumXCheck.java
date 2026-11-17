@@ -6,6 +6,19 @@ public class SumXCheck {
 
     public static void check(int x) {
         // TODO (6): assume the precondition, call SumX.sum, assert the postcondition
-        assert false;   // remove this line
+    
+        CProver.assume(x >= 0 && x <= 1000);        // preconditions
+
+        int result = SumX.sum(x);
+
+        int sum = x * (x + 1) / 2;
+
+        boolean equal = false;
+
+        if (result == sum){
+            equal = true;
+        }
+
+        assert equal;
     }
 }
