@@ -11,7 +11,7 @@ public class Max {
         //@ loop_invariant i <= a.length || a.length == 1;
         //@ loop_invariant (\exists int j; 0 <= j && j < i; m == a[j]);
         //@ loop_invariant (\forall int j; 0 <= j && j < i; m >= a[j]);
-        //@ decreases a.length - 1 - i;
+        //@ decreases a.length - i;
         for (int i = 1; i < a.length; i++) {
             if (a[i] > m) {
                 m = a[i];
